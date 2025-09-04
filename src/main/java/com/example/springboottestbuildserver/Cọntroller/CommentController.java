@@ -36,14 +36,14 @@ public class CommentController {
     }
 
     // Tạo một danh sách các bình luận mới
-    @PostMapping("/bulk")
+    @PostMapping("/create")
     public ResponseEntity<List<Comment>> createComments(@RequestBody List<Comment> comments) {
         List<Comment> createdComments = commentService.create(comments);
         return new ResponseEntity<>(createdComments, HttpStatus.CREATED);
     }
 
     // Cập nhật một danh sách các bình luận
-    @PutMapping("/bulk")
+    @PutMapping("/update")
     public ResponseEntity<List<Comment>> updateComments(@RequestBody List<Comment> comments) {
         List<Comment> updatedComments = commentService.update(comments);
         return ResponseEntity.ok(updatedComments);

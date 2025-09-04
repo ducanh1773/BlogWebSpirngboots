@@ -24,13 +24,13 @@ public class PostController {
         return ResponseEntity.ok(postService.findAll());
     }
 
-    @PostMapping("/bulk")
+    @PostMapping("/create")
     public ResponseEntity<List<Post>> createPosts(@RequestBody List<Post> posts) {
         List<Post> createdPosts = postService.create(posts);
         return new ResponseEntity<>(createdPosts, HttpStatus.CREATED);
     }
 
-    @PutMapping("/bulk")
+    @PutMapping("/update")
     public ResponseEntity<List<Post>> updatePosts(@RequestBody List<Post> posts) {
         List<Post> updatedPosts = postService.update(posts);
         return new ResponseEntity<>(updatedPosts, HttpStatus.OK);

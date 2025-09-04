@@ -34,14 +34,14 @@ public class CategoryController {
     }
 
     // Tạo một danh sách các danh mục mới
-    @PostMapping("/bulk")
+    @PostMapping("/create")
     public ResponseEntity<List<Category>> createCategories(@RequestBody List<Category> categories) {
         List<Category> createdCategories = categoryService.create(categories);
         return new ResponseEntity<>(createdCategories, HttpStatus.CREATED);
     }
 
     // Cập nhật một danh sách các danh mục
-    @PutMapping("/bulk")
+    @PutMapping("/update")
     public ResponseEntity<List<Category>> updateCategories(@RequestBody List<Category> categories) {
         List<Category> updatedCategories = categoryService.update(categories);
         return ResponseEntity.ok(updatedCategories);

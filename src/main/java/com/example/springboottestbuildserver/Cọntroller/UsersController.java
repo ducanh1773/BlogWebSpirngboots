@@ -15,7 +15,7 @@ public class UsersController {
     @Autowired
     private UsersService usersService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<List<Users>> createUser(@RequestBody List<Users> usersList) {
         try {
             List<Users> createdUsers = usersService.creatUser(usersList);
@@ -25,7 +25,7 @@ public class UsersController {
         }
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<List<Users>> updateUser(@RequestBody List<Users> usersList) {
         try {
             List<Users> updatedUsers = usersService.updateUser(usersList);
@@ -35,7 +35,7 @@ public class UsersController {
         }
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseEntity<List<Users>> deleteUser(@RequestBody List<Users> usersList) {
         try {
             List<Users> deletedUsers = usersService.deleteUser(usersList);
