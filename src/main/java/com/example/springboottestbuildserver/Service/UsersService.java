@@ -14,17 +14,17 @@ public class UsersService {
     @Autowired
     UserRepository userRepository;
 
-    public List<Users> creatUser(List<Users> usersList) {
-        List<Users> usersListCreate = new LinkedList();
-        for (Users users : usersList) {
-            if (users.getUsername().isBlank() || users.getEmail().isBlank() || users.getPassword().isBlank()) {
-                throw new RuntimeException("field all");
-            }
-            usersListCreate.add(users);
-        }
-        userRepository.saveAll(usersListCreate);
-        return usersListCreate;
-    }
+//    public List<Users> creatUser(List<Users> usersList) {
+//        List<Users> usersListCreate = new LinkedList();
+//        for (Users users : usersList) {
+//            if (users.getUsername().isBlank() || users.getEmail().isBlank() || users.getPassword().isBlank()) {
+//                throw new RuntimeException("field all");
+//            }
+//            usersListCreate.add(users);
+//        }
+//        userRepository.saveAll(usersListCreate);
+//        return usersListCreate;
+//    }
 
     public List<Users> updateUser(List<Users> usersList) {
         List<Users> usersListUpdate = new LinkedList();
@@ -43,8 +43,7 @@ public class UsersService {
         for (Users users : usersList) {
             if (users.getId().equals(null) || users.getUsername().isBlank() || users.getEmail().isBlank() || users.getPassword().isBlank()) {
                 throw new RuntimeException("field all");
-            }
-            usersListDelete.add(users.getId());
+            }            usersListDelete.add(users.getId());
         }
         userRepository.deleteAllById(usersListDelete);
         return usersList;

@@ -15,15 +15,15 @@ public class UsersController {
     @Autowired
     private UsersService usersService;
 
-    @PostMapping("/create")
-    public ResponseEntity<List<Users>> createUser(@RequestBody List<Users> usersList) {
-        try {
-            List<Users> createdUsers = usersService.creatUser(usersList);
-            return new ResponseEntity<>(createdUsers, HttpStatus.CREATED);
-        } catch (RuntimeException e) {
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-        }
-    }
+//    @PostMapping("/create")
+//    public ResponseEntity<List<Users>> createUser(@RequestBody List<Users> usersList) {
+//        try {
+//            List<Users> createdUsers = usersService.creatUser(usersList);
+//            return new ResponseEntity<>(createdUsers, HttpStatus.CREATED);
+//        } catch (RuntimeException e) {
+//            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+//        }
+//    }
 
     @PutMapping("/update")
     public ResponseEntity<List<Users>> updateUser(@RequestBody List<Users> usersList) {
